@@ -1,14 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        <!-- {{ 'lang.name' | translate }} -->
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <h2 translate>lang.title</h2>
+<!--
+    <button ion-button (click)="changeLanguage('lo')">Laos</button>
+    <button ion-button (click)="changeLanguage('en')">{{ 'lang.translate' | translate }}</button> -->
+
+    <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select #L (ionChange)="changeLanguage(L.value)">
+            <ion-option value="en" selected="true">English</ion-option>
+          <ion-option value="lo">Laos</ion-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-content>
